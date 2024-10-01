@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>hexadezimal rechner</h1>
+
+ 
+<div style= "text-align:center">
+<input id="zahl" placeholder="Zahl eingeben"></input>
+<button class="button" onclick=advance()>einen Schritt weiter</button>
+</div>
+
+<div id="board">
+  <p>Rechnung:</p>
+  <p id="rechnung"></p>
+  <p id="end"></p>
+ 
+</div>
+</body>
+</html>
+<style>
+	h1{
+    	color: black;
+      font-family: sans-serif;
+      text-align :center;
+    }
+    body {
+    	background-color: lightblue;
+    }
+    p {
+    	font-family: sans-serif;
+      text-align: center;
+      font-weight: bold;
+     	   
+    }
+    .button {
+      background-color: gray;
+      border: none;
+      padding: 15px 30px;
+      font-family: sans-serif;
+      text-align: center;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    #name{
+      border: none;
+      color: black;
+      border-radius:8px;
+      background-color: gray;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 15px 30px;
+    }
+    #board {
+      padding-top: 10px;
+    }
+
+    * {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+
+      }
+        
+    
+    
+</style>
+<script>
+	function advance(){
+
+      z = document.getElementById("zahl").value
+      zahl = z
+      i = 0
+      var text=""
+      while(zahl > 0){
+        i += 1
+        rest = zahl %16
+        zahl = Math.floor(zahl/16)
+        //document.getElementById("board").appendChild(document.createElement('p').innerHTML= i)
+        //text.concat("<br>"+i + ". Zwischenergebnis: " + zahl + "|| Rest: "+ rest +"<br>________________________________") 
+        text += "<br>"+i + ". Zwischenergebnis: " + zahl + "|| Rest: "+ rest +"<br>"
+      }
+      document.getElementById("rechnung").innerHTML=text
+      //document.getElementById("end").innerHTML = "dezimal: "+ z + "<br>hexadezimal: "+ s
+
+    }
+    
+</script>
+
